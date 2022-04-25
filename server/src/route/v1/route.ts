@@ -1,9 +1,10 @@
 import express from 'express';
+import HomeController from '@controller/home';
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.send('hello world');
+    HomeController.Index(req, res);
 });
 
 export default router;
