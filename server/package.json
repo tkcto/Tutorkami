@@ -1,11 +1,13 @@
 {
+    "type": "module",
     "name": "tutorkami-server",
     "version": "1.0.0",
     "description": "Tutorkami server for backend",
     "scripts": {
         "dev:compile": "tsc -w & tsc-alias -w",
         "dev:run": "nodemon dist/server.js",
-        "dev": "concurrently npm:dev:*"
+        "dev": "concurrently npm:dev:*",
+        "build": "tsc && tsc-alias"
     },
     "keywords": [],
     "author": "Sobri",
