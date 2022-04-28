@@ -4,6 +4,9 @@ import compression from 'compression';
 import v1Route from './route/v1/route';
 import express, { Request, Response } from 'express';
 
+//@ts-ignore
+import { handler } from '../../client/_client/handler';
+
 const app = express();
 
 app.use(helmet());
@@ -13,9 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use('/v1', v1Route);
-
-app.all('*', (req: Request, res: Response) => {
-    res.status(404).json({ code: 404, error: 'Not Found' });
-});
+app.use(handler);
 
 export default app;

@@ -1,7 +1,7 @@
 .env
 node_modules
-server/dist
-client/dist
+server/_server
+client/_client
 
 .devcontainer/docker/log/mysql/*
 !.devcontainer/docker/log/mysql/.gitkeep
