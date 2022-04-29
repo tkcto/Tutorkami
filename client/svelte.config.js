@@ -11,6 +11,15 @@ const config = {
         adapter: adapter({
             out: '_client',
         }),
+        csp: {
+            mode: 'auto',
+            directives: {
+                'default-src': ['self'],
+                'script-src': ['self', 'unsafe-inline'],
+                'img-src': ['self'],
+                'style-src': ['self'],
+            },
+        },
     },
 };
 
