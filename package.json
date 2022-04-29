@@ -1,0 +1,20 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "description": "Tutorkami V3",
+    "scripts": {
+        "build": "npm run build --prefix client && npm run build --prefix server",
+        "start": " npm run build && node server/_server/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tkcto/Tutorkami.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tkcto/Tutorkami/issues"
+    },
+    "homepage": "https://github.com/tkcto/Tutorkami#readme"
+}
