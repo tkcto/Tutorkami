@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "description": "Tutorkami V3",
     "scripts": {
+        "install": "npm install --prefix client && npm install --prefix server",
         "build": "npm run build --prefix client && npm run build --prefix server",
-        "start": " npm run build && node server/_server/server.js"
+        "start": " npm run install && npm run build && node server/_server/server.js"
     },
     "repository": {
         "type": "git",
