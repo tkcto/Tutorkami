@@ -3,9 +3,14 @@
     "version": "1.0.0",
     "description": "Tutorkami V3",
     "scripts": {
-        "install": "npm install --prefix client && npm install --prefix server",
-        "build": "npm run build --prefix client && npm run build --prefix server",
-        "start": " npm run install && npm run build && node server/_server/server.js"
+        "install": "npm install --prefix backend && npm install --prefix frontend",
+        "build": "npm run build --prefix backend && npm run build --prefix frontend",
+        "start": "npm run install && npm run build && node backend/.build/backend/server.js",
+        "dev:backend": "npm run dev --prefix backend",
+        "dev:frontend": "npm run dev --prefix frontend",
+        "dev:runner": "nodemon -w frontend/.build  -w backend/.build -x \"npm run runner:server\"",
+        "runner:server": "node backend/.build/backend/server.js",
+        "dev": "concurrently npm:dev:*"
     },
     "repository": {
         "type": "git",
@@ -17,5 +22,9 @@
     "bugs": {
         "url": "https://github.com/tkcto/Tutorkami/issues"
     },
-    "homepage": "https://github.com/tkcto/Tutorkami#readme"
+    "homepage": "https://github.com/tkcto/Tutorkami#readme",
+    "devDependencies": {
+        "concurrently": "^7.1.0",
+        "nodemon": "^2.0.16"
+    }
 }

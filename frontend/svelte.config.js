@@ -9,7 +9,7 @@ const config = {
 
     kit: {
         adapter: adapter({
-            out: '_client',
+            out: '.build/frontend',
         }),
         csp: {
             mode: 'auto',
