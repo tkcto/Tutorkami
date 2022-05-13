@@ -26,6 +26,9 @@
 			"@model/*": [
 				"src/model/*"
 			],
+			"@frontend/*": [
+				"../../../frontend/*",
+			],
 		}
 	},
 	"tsc-alias": {

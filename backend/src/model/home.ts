@@ -1,6 +1,6 @@
 class HomeModel {
     Index(): string {
-        return 'lorem';
+        return 'Home page';
     }
 }
 
