@@ -5,7 +5,7 @@ import v1Route from './route/v1/route';
 import express, { Request, Response } from 'express';
 
 //@ts-ignore
-import { handler } from '../../client/_client/handler';
+import { handler } from '../../../frontend/.build/frontend/handler';
 
 const app = express();
 
