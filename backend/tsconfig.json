@@ -1,4 +1,7 @@
 {
+	"exclude": [
+		"database"
+	],
 	"compilerOptions": {
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,

@@ -9,14 +9,14 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		"**/.classpath": true,
-		"**/.project": true,
-		"**/.settings": true,
-		"**/.factorypath": true,
-		"**/.pnpm-store": true,
-		".pnpm-store": true
+		"**/.classpath": false,
+		"**/.project": false,
+		"**/.settings": false,
+		"**/.factorypath": false,
+		"**/.devcontainer": true,
+		".devcontainer": true
 	},
-	"explorerExclude.backup": {},
+	"explorerExclude.backup": null,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"

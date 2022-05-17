@@ -1,0 +1,20 @@
+{
+    "type": "commonjs",
+    "name": "knex",
+    "version": "1.0.0",
+    "description": "Knex. Please read @comment",
+    "keywords": [],
+    "author": "Sobri",
+    "license": "ISC",
+    "@comment": [
+        "This file is needed because `package.json` at backnd root contain `type:module`.",
+        "This cause a slew of bug, cause knex expected `type:commonjs` but if I change/delete",
+        "`type:module` at backend root, linkage between express and svelte is not working",
+        "because svelte is being generate using esm ( `type:module` ). Thus i need to",
+        "generate expressjs using esm too instead of commonjs. Hence i cannot change/delete",
+        "`type:module` at backend root. So i need to override module system at this ",
+        "directory level ( `type:commonjs` )",
+        "See https://github.com/knex/knex/issues/4793",
+        "See https://github.com/knex/knex/issues/3849"
+    ]
+}
