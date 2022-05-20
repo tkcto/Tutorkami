@@ -10,7 +10,8 @@
         "dev:backend": "npm run dev --prefix backend",
         "dev:frontend": "npm run dev --prefix frontend",
         "dev:runner": "nodemon -w frontend/.build  -w backend/.build -x \"npm run runner:server\"",
-        "runner:server": "node backend/.build/backend/server.js"
+        "runner:server": "node backend/.build/backend/server.js",
+        "knex": "npm run knex --prefix backend"
     },
     "repository": {
         "type": "git",

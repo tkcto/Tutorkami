@@ -6,6 +6,9 @@
     "keywords": [],
     "author": "Sobri",
     "license": "ISC",
+    "scripts": {
+        "knex": "npx knex"
+    },
     "@comment": [
         "This file is needed because `package.json` at backnd root contain `type:module`.",
         "This cause a slew of bug, cause knex expected `type:commonjs` but if I change/delete",

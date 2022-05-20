@@ -6,7 +6,8 @@
     "scripts": {
         "build": "tsc && tsc-alias",
         "dev:build": "nodemon -w src -e ts -x \"npm run build\"",
-        "dev": "npm run dev:build"
+        "dev": "npm run dev:build",
+        "knex": "npm run knex --prefix database"
     },
     "keywords": [],
     "author": "Sobri",
