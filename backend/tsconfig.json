@@ -1,8 +1,9 @@
 {
 	"exclude": [
-		"database"
+		"src/database/**/*"
 	],
 	"compilerOptions": {
+		"removeComments": true,
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"target": "ES2020", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
@@ -28,6 +29,9 @@
 			],
 			"@model/*": [
 				"src/model/*"
+			],
+			"@schema/*": [
+				"src/schema/*"
 			],
 			"@frontend/*": [
 				"../../../frontend/*",
