@@ -10,13 +10,13 @@
     <div>
         <a
             class="text-sm hover:underline"
-            href="/client/login"
+            href="/auth/client/login"
             sveltekit:prefetch>Login</a
         >
 
         <a
             class="text-sm hover:underline"
-            href="/client/register"
+            href="/auth/client/register"
             sveltekit:prefetch>Register</a
         >
     </div>

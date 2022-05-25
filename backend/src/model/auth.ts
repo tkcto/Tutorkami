@@ -35,15 +35,23 @@ class AuthModel extends Model {
         return result;
     }
 
-    async findUserLocal(email: string): Promise<UserLocalData[]> {
+    async findUserLocal(
+        email: string,
+        group: string
+    ): Promise<UserLocalData[]> {
         const result = await this.db.query(
             `
-				SELECT u.id, u.email, u.name, ua.auth_type, uap.password 
-				FROM user u INNER JOIN user_auth ua ON u.id = ua.user_id 
+				SELECT 
+					u.id, u.email, u.name, ua.auth_type, 
+					uap.password, ug.group_id, g.name group_name
+				FROM user u INNER JOIN user_auth ua ON u.id = ua.user_id
 				INNER JOIN user_auth_password uap on ua.id = uap.user_auth_id
-				WHERE ua.auth_type='local' AND u.email=?
+                INNER JOIN user_group ug on u.id = ug.user_id
+                INNER JOIN \`group\` g on ug.group_id = g.id
+				WHERE ua.auth_type='local' AND u.email=? and g.name=?
 			`,
-            email
+            email,
+            group
         );
 
         return result;

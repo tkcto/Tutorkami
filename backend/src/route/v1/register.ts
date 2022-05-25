@@ -1,7 +1,7 @@
-import express, { Request, Response } from 'express';
-import AuthController from '@controller/auth';
-import requestValidator from '@middleware/request.validator';
 import schema from '@schema/register';
+import AuthController from '@controller/auth';
+import express, { Request, Response } from 'express';
+import requestValidator from '@middleware/request.validator';
 
 const router = express.Router();
 

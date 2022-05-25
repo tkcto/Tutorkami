@@ -1,7 +1,7 @@
 import morgan from 'morgan';
 import helmet from 'helmet';
 import bcrypt from 'bcrypt';
-import express from 'express';
+import express, { Request } from 'express';
 import passport from 'passport';
 import AuthModel from '@model/auth';
 import compression from 'compression';
@@ -24,16 +24,22 @@ passport.use(
         {
             usernameField: 'email',
             passwordField: 'password',
+            passReqToCallback: true,
         },
-        async function (email: string, password: string, done: any) {
+        async function (
+            req: Request,
+            email: string,
+            password: string,
+            done: any
+        ) {
+            const group = req.body.group;
+            console.log(`Group is: ${group}`);
             const authModel = new AuthModel();
-            const userData = await authModel.findUserLocal(email);
+            const userData = await authModel.findUserLocal(email, group);
 
             if (userData.length <= 0) return done(null, false);
 
-            const user = userData[0];
-            const result = bcrypt.compareSync(password, user.password);
-
+            const result = bcrypt.compareSync(password, userData[0].password);
             if (!result) return done(null, false);
 
             return done(null, userData);
