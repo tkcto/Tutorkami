@@ -1,10 +1,16 @@
 import express from 'express';
+import passport from 'passport';
 
 const router = express.Router();
 
-router.post('/local', (req, res) => {
-    res.send('login::local');
-});
+router.post(
+    '/local',
+    passport.authenticate('local', {
+        successRedirect: '/client',
+        failureRedirect: '/client/login',
+        session: false,
+    })
+);
 
 router.post('/facebook', (req, res) => {
     res.send('login::facebook');

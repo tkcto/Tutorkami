@@ -4,14 +4,49 @@ import Model from './model';
 type Group = 'Super' | 'Admin' | 'Client' | 'Tutor';
 type AuthType = 'local' | 'facebook' | 'google';
 
+type UserData = {
+    id: number;
+    email: string;
+    name: string;
+    created_at: string;
+    updated_at: string;
+};
+
+type UserLocalData = {
+    id: number;
+    email: string;
+    name: string;
+    auth_type: string;
+    password: string;
+};
+
 class AuthModel extends Model {
     async isUserExist(email: string): Promise<boolean> {
-        const data = await this.db.query(
+        const result = await this.findUser(email);
+        return result.length > 0;
+    }
+
+    async findUser(email: string): Promise<UserData[]> {
+        const result = await this.db.query(
             `SELECT * FROM user WHERE email=?`,
             email
         );
 
-        return data.length > 0;
+        return result;
+    }
+
+    async findUserLocal(email: string): Promise<UserLocalData[]> {
+        const result = await this.db.query(
+            `
+				SELECT u.id, u.email, u.name, ua.auth_type, uap.password 
+				FROM user u INNER JOIN user_auth ua ON u.id = ua.user_id 
+				INNER JOIN user_auth_password uap on ua.id = uap.user_auth_id
+				WHERE ua.auth_type='local' AND u.email=?
+			`,
+            email
+        );
+
+        return result;
     }
 
     async createUser(email: string, name: string): Promise<number> {
@@ -21,7 +56,6 @@ class AuthModel extends Model {
             name
         );
 
-        console.dir(result.insertId);
         return result.insertId;
     }
 
