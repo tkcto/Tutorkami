@@ -16,7 +16,7 @@
 		"**/.devcontainer": true,
 		".devcontainer": true
 	},
-	"explorerExclude.backup": null,
+	"explorerExclude.backup": {},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"

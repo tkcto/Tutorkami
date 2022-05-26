@@ -29,7 +29,10 @@
 		"kameshkotwani.google-search",
 		"miconda.goto-symbol-stack",
 		"2gua.rainbow-brackets",
-		"ahgood.shift-shift"
+		"ahgood.shift-shift",
+		"svelte.svelte-vscode",
+		"ardenivanov.svelte-intellisense",
+		"GitHub.copilot"
 	]
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
