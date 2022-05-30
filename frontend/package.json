@@ -10,7 +10,7 @@
         "prepare": "svelte-kit sync",
         "check": "svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-        "dev:build": "nodemon -w src -e ts,js,svelte -x \"npm run build\"",
+        "dev:build": "nodemon -w src -e ts,js,css,svelte -x \"npm run build\"",
         "dev": "npm run dev:build"
     },
     "devDependencies": {
