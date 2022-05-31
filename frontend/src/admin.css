@@ -534,7 +534,7 @@ main .recent-orders a {
 }
 
 /* Media Query */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
     .container {
         width: 94%;
         grid-template-columns: 7rem auto 23rem;
