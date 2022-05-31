@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import '../../admin.css';
+
     let sideMenu: HTMLElement | null = null;
     let menuBtn: HTMLElement | null = null;
     let closeBtn: HTMLElement | null = null;

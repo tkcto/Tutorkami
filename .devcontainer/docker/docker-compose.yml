@@ -22,6 +22,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?}
       MYSQL_ALLOW_EMPTY_PASSWORD: "no"
     volumes:
+      - ./init:/docker-entrypoint-initdb.d
       - '${MYSQL_VOL_DIR:?}:/var/lib/mysql' #Make sure host volume is already exist prior to run docker compose
       - '${MYSQL_LOG_DIR:?}:/var/log/mysql' #Make sure host volume is already exist prior to run docker compose 
       - '${MYSQL_CNF_DIR:?}:/etc/mysql/conf.d'
